@@ -25,8 +25,8 @@ loadSprite("lanterns", "wiSiY09.png");
 loadSprite("slicer", "c6JFi5Z.png");
 loadSprite("skeletor", "Ei1VnX8.png");
 loadSprite("kaboom", "o9WizfI.png");
-loadSprite("stairs", "");
-loadSprite("bg", "");
+loadSprite("stairs", "VghkL08.png");
+loadSprite("bg", "u4DVsx6.png");
 
 scene("game", () => {});
 
