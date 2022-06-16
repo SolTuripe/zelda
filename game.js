@@ -28,6 +28,13 @@ loadSprite("kaboom", "o9WizfI.png");
 loadSprite("stairs", "VghkL08.png");
 loadSprite("bg", "u4DVsx6.png");
 
-scene("game", () => {});
+scene("game", () => {
+  const map = ["", "", "", "", "", "", "", "", ""];
+
+  const levelCfg = {
+    width: 48,
+    height: 48,
+  };
+});
 
 start("game");
