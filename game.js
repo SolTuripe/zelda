@@ -30,15 +30,15 @@ loadSprite("bg", "u4DVsx6.png");
 
 scene("game", () => {
   const map = [
-    "a         ",
-    "a         ",
-    "a         ",
-    "a         ",
-    "a         ",
-    "a         ",
-    "a         ",
-    "a         ",
-    "aaaaaaaaaa",
+    "ycc)cc^ccw",
+    "a        b",
+    "a      * b",
+    "a     (  b",
+    "%        b",
+    "a     (  b",
+    "a   *    b",
+    "a        b",
+    "xdd)dd)ddz",
   ];
 
   const levelCfg = {
