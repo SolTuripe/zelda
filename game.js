@@ -34,6 +34,7 @@ scene("game", () => {
   const levelCfg = {
     width: 48,
     height: 48,
+    a: [sprite("left-wall"), solid()],
   };
 });
 
