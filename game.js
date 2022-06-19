@@ -29,6 +29,8 @@ loadSprite("stairs", "VghkL08.png");
 loadSprite("bg", "u4DVsx6.png");
 
 scene("game", () => {
+  layers(["bg", "obj", "ui"], "obj");
+
   const map = [
     "ycc)cc^ccw",
     "a        b",
