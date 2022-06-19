@@ -28,7 +28,7 @@ loadSprite("kaboom", "o9WizfI.png");
 loadSprite("stairs", "VghkL08.png");
 loadSprite("bg", "u4DVsx6.png");
 
-scene("game", () => {
+scene("game", ({ level, score }) => {
   layers(["bg", "obj", "ui"], "obj");
 
   const map = [
@@ -70,12 +70,12 @@ scene("game", () => {
     pos(400, 450),
     layer("ui"),
     {
-      value: "test",
+      value: score,
     },
     scale(2),
   ]);
 
-  add([text("level" + "test-level"), pos(400, 485), scale(2)]);
+  add([text("level" + parseInt(level + 1)), pos(400, 485), scale(2)]);
 });
 
-start("game");
+start("game", { level: 0, score: 0 });
