@@ -29,13 +29,38 @@ loadSprite("stairs", "VghkL08.png");
 loadSprite("bg", "u4DVsx6.png");
 
 scene("game", () => {
-  const map = ["", "", "", "", "", "", "", "", ""];
+  const map = [
+    "a         ",
+    "a         ",
+    "a         ",
+    "a         ",
+    "a         ",
+    "a         ",
+    "a         ",
+    "a         ",
+    "aaaaaaaaaa",
+  ];
 
   const levelCfg = {
     width: 48,
     height: 48,
     a: [sprite("left-wall"), solid()],
+    b: [sprite("right-wall"), solid()],
+    c: [sprite("top-wall"), solid()],
+    d: [sprite("bottom-wall"), solid()],
+    w: [sprite("top-right-wall"), solid()],
+    x: [sprite("bottom-left-wall"), solid()],
+    y: [sprite("top-left-wall"), solid()],
+    z: [sprite("bottom-right-wall"), solid()],
+    "%": [sprite("left-door"), solid()],
+    "^": [sprite("top-door"), solid()],
+    $: [sprite("stairs"), solid()],
+    "*": [sprite("slicer"), solid()],
+    "}": [sprite("skeletor"), solid()],
+    ")": [sprite("lanterns"), solid()],
+    "(": [sprite("fire-pot"), solid()],
   };
+  addLevel(map, levelCfg);
 });
 
 start("game");
