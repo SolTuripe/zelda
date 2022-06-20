@@ -76,6 +76,8 @@ scene("game", ({ level, score }) => {
   ]);
 
   add([text("level" + parseInt(level + 1)), pos(400, 485), scale(2)]);
+
+  const player = add([sprite("link-going-right"), pos(5, 190)]);
 });
 
 start("game", { level: 0, score: 0 });
