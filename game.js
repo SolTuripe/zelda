@@ -93,7 +93,8 @@ scene("game", ({ level, score }) => {
 
   keyDown("left", () => {
     player.changeSprite("link-going-left");
-    player.move(MOVE_SPEED, 0);
+    player.move(-MOVE_SPEED, 0);
+    player.dir = vec2(-1, 0);
   });
 });
 
