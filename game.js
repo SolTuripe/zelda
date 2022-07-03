@@ -5,6 +5,8 @@ kaboom({
   debug: true,
 });
 
+const MOVE_SPEED = 120;
+
 loadRoot("https://i.imgur.com/");
 loadSprite("link-going-left", "eiY5zyX.png");
 loadSprite("link-going-right", "yZIb8O2.png");
@@ -91,6 +93,7 @@ scene("game", ({ level, score }) => {
 
   keyDown("left", () => {
     player.changeSprite("link-going-left");
+    player.move(MOVE_SPEED, 0);
   });
 });
 
