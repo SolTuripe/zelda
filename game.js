@@ -88,6 +88,10 @@ scene("game", ({ level, score }) => {
   player.action(() => {
     player.resolve();
   });
+
+  keyDown("left", () => {
+    player.changeSprite("link-going-left");
+  });
 });
 
 start("game", { level: 0, score: 0 });
