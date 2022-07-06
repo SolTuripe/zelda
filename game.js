@@ -33,16 +33,29 @@ loadSprite("bg", "u4DVsx6.png");
 scene("game", ({ level, score }) => {
   layers(["bg", "obj", "ui"], "obj");
 
-  const map = [
-    "ycc)cc^ccw",
-    "a        b",
-    "a      * b",
-    "a     (  b",
-    "%        b",
-    "a     (  b",
-    "a   *    b",
-    "a        b",
-    "xdd)dd)ddz",
+  const maps = [
+    [
+      "ycc)cc^ccw",
+      "a        b",
+      "a      * b",
+      "a     (  b",
+      "%        b",
+      "a     (  b",
+      "a   *    b",
+      "a        b",
+      "xdd)dd)ddz",
+    ],
+    [
+      "yccccccccw",
+      "a        b",
+      ")        )",
+      "a        b",
+      "a        b",
+      "a    $   b",
+      ")   }    )",
+      "a        b",
+      "xddddddddz",
+    ],
   ];
 
   const levelCfg = {
@@ -64,7 +77,7 @@ scene("game", ({ level, score }) => {
     ")": [sprite("lanterns"), solid()],
     "(": [sprite("fire-pot"), solid()],
   };
-  addLevel(map, levelCfg);
+  addLevel(maps[level], levelCfg);
   //add(sprite[("bg"), layer("bg")])
 
   const scoreLabel = add([
@@ -123,4 +136,4 @@ scene("game", ({ level, score }) => {
   });
 });
 
-start("game", { level: 0, score: 0 });
+start("game", { level: 1, score: 0 });
