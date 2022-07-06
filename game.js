@@ -106,7 +106,7 @@ scene("game", ({ level, score }) => {
 
   player.overlaps("next-level", () => {
     go("game", {
-      level: level + 1,
+      level: (level + 1) % maps.length,
       score: scoreLabel.value,
     });
   });
