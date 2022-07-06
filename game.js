@@ -72,7 +72,7 @@ scene("game", ({ level, score }) => {
     "%": [sprite("left-door"), solid()],
     "^": [sprite("top-door"), "next-level"],
     $: [sprite("stairs"), "next-level"],
-    "*": [sprite("slicer")],
+    "*": [sprite("slicer"), "slicer", { dir: -1 }],
     "}": [sprite("skeletor")],
     ")": [sprite("lanterns"), solid()],
     "(": [sprite("fire-pot"), solid()],
@@ -133,6 +133,12 @@ scene("game", ({ level, score }) => {
     player.changeSprite("link-going-down");
     player.move(0, MOVE_SPEED);
     player.dir = vec2(0, 1);
+  });
+
+  const SLICER_SPEED = 100;
+
+  action("slicer", (s) => {
+    s.move(s.dir * SLICER_SPEED, 0);
   });
 });
 
