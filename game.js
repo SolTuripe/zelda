@@ -73,7 +73,7 @@ scene("game", ({ level, score }) => {
     "^": [sprite("top-door"), "next-level"],
     $: [sprite("stairs"), "next-level"],
     "*": [sprite("slicer"), "slicer", { dir: -1 }, "dangerous"],
-    "}": [sprite("skeletor"), "dangerous"],
+    "}": [sprite("skeletor"), "dangerous", "skeletor", { dir: -1, timer: 0 }],
     ")": [sprite("lanterns"), solid()],
     "(": [sprite("fire-pot"), solid()],
   };
@@ -145,6 +145,21 @@ scene("game", ({ level, score }) => {
     s.dir = -s.dir;
   });
 
+  const SKELETOR_SPEED = 60;
+
+  action("skeletor", (s) => {
+    s.move(0, s.dir * SKELETOR_SPEED);
+    s.timer -= dt();
+    if (s.timer <= 0) {
+      s.dir = -s.dir;
+      s.timer = rand(5);
+    }
+  });
+
+  collides("skeletor", "wall", (s) => {
+    s.dir = -s.dir;
+  });
+
   player.overlaps("dangerous", () => {
     go("lose", { score: scoreLabel.value });
   });
@@ -154,4 +169,4 @@ scene("lose", ({ score }) => {
   add([text(score, 32), origin("center"), pos(width() / 2, height() / 2)]);
 });
 
-start("game", { level: 0, score: 0 });
+start("game", { level: 1, score: 0 });
