@@ -150,4 +150,8 @@ scene("game", ({ level, score }) => {
   });
 });
 
+scene("lose", ({ score }) => {
+  add([text(score, 32), origin("center"), pos(width() / 2, height() / 2)]);
+});
+
 start("game", { level: 0, score: 0 });
