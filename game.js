@@ -3,6 +3,7 @@ kaboom({
   fullscreen: true,
   scale: 1,
   debug: true,
+  clearColor: [0, 0, 0, 1],
 });
 
 const MOVE_SPEED = 120;
@@ -69,7 +70,7 @@ scene("game", ({ level, score }) => {
     x: [sprite("bottom-left-wall"), solid(), "wall"],
     y: [sprite("top-left-wall"), solid(), "wall"],
     z: [sprite("bottom-right-wall"), solid(), "wall"],
-    "%": [sprite("left-door"), solid()],
+    "%": [sprite("left-door"), solid(), "door"],
     "^": [sprite("top-door"), "next-level"],
     $: [sprite("stairs"), "next-level"],
     "*": [sprite("slicer"), "slicer", { dir: -1 }, "dangerous"],
@@ -78,7 +79,7 @@ scene("game", ({ level, score }) => {
     "(": [sprite("fire-pot"), solid()],
   };
   addLevel(maps[level], levelCfg);
-  //add(sprite[("bg"), layer("bg")])
+  add([sprite("bg"), layer("bg")]);
 
   const scoreLabel = add([
     text("0"),
@@ -144,6 +145,10 @@ scene("game", ({ level, score }) => {
 
   keyPress("space", () => {
     spawKaboom(player.pos.add(player.dir.scale(48)));
+  });
+
+  player.collides("door", (d) => {
+    destroy(d);
   });
 
   collides("kaboom", "skeletor", (k, s) => {
