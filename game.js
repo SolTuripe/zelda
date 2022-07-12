@@ -146,6 +146,16 @@ scene("game", ({ level, score }) => {
     spawKaboom(player.pos.add(player.dir.scale(48)));
   });
 
+  collides("kaboom", "skeletor", (k, s) => {
+    camShake(4);
+    wait(1, () => {
+      destroy(k);
+    });
+    destroy(s);
+    scoreLabel.value++;
+    scoreLabel.text = scoreLabel.value;
+  });
+
   const SLICER_SPEED = 100;
 
   action("slicer", (s) => {
