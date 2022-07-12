@@ -137,6 +137,9 @@ scene("game", ({ level, score }) => {
 
   function spawKaboom(p) {
     const obj = add([sprite("kaboom"), pos(p), "kaboom"]);
+    wait(1, () => {
+      destroy(obj);
+    });
   }
 
   keyPress("space", () => {
