@@ -139,6 +139,10 @@ scene("game", ({ level, score }) => {
     const obj = add([sprite("kaboom"), pos(p), "kaboom"]);
   }
 
+  keyPress("space", () => {
+    spawKaboom(player.pos.add(player.dir.scale(48)));
+  });
+
   const SLICER_SPEED = 100;
 
   action("slicer", (s) => {
