@@ -135,6 +135,10 @@ scene("game", ({ level, score }) => {
     player.dir = vec2(0, 1);
   });
 
+  function spawKaboom(p) {
+    const obj = add([sprite("kaboom"), pos(p), "kaboom"]);
+  }
+
   const SLICER_SPEED = 100;
 
   action("slicer", (s) => {
