@@ -9,4 +9,4 @@ Inspired by [kubowania](https://github.com/kubowania)
 
 ## You can play here 🌿
 
-[Game](file:///Users/solturipe/Documents/projects/zelda-kaboomjs/index.html)
+file:///Users/solturipe/Documents/projects/zelda-kaboomjs/index.html
