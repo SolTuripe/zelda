@@ -8,5 +8,3 @@ Inspired by [kubowania](https://github.com/kubowania)
 ## Demo 🎥
 
 ## You can play here 🌿
-
-file:///Users/solturipe/Documents/projects/zelda-kaboomjs/index.html
